@@ -15,3 +15,8 @@ if x >= 90 and y >= 90:
 
 if x >= 10 and y >= 90:
     print("Lewy górny róg")
+
+if x == 50 and y == 50
+    print("Centrum")
+
+if
