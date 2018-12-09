@@ -22,5 +22,3 @@ h = 5
 wynik = 1/2 *(a + b) * h
 
 print("pole trapezu wynosi: ", wynik)
-
-# policz objetosc kuli o zadanym promieniu
