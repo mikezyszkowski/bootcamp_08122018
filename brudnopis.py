@@ -63,3 +63,4 @@
 # Operatory zbiorów:
 # | = suma
 # & = iloczyn
+

@@ -1,41 +1,45 @@
 produkty = {
-    'cebula': 2,
-    'papryka': 10,
-    'pomidor': 4,
-    'salata': 3,
+    "ziemniaki": 1.99,
+    'pomidory': 6.99,
+    'woda': 1.79,
 }
 magazyn = {
-    'cebula': 100,
-    'papryka': 15,
-    'pomidor': 30,
-    'salata': 12,
+    "ziemniaki": 10,
+    'pomidory': 10,
+    'woda': 10,
 }
+
 while True:
-    rola = input("Czy jesteś [klient]em [k], czy [dostawca] [d]?, [q] by zakończyć ")
+    rola = input("Czy jesteś [klient]em [k], czy [dostawca][d], [q] by zakończyć? ")
     if rola.lower() in ['klient', 'k']:
-        print("Na sprzedaż: ")
-        for produkt, cena in produkty.items():
-            print(f' - {produkt} - {cena:2f}')
-        zakup = input("Co chcesz kupić? [k] by zakończyć ")
-        if zakup.lower() == 'k':
-            print("Zapraszamy ponownie!")
-            break
-        if zakup not in produkty:
-            print("Brak produktu")
-            continue
-        waga = float(input(f"Ile chcesz kupić - [{zakup}]"))
-        if waga > magazyn[zakup]:
-            print("Nie ma tyle towaru")
-            print(f"W magazynie pozostało: {magazyn[zakup]}")
-        else:
-            cena = produkty.get(zakup)
-            if cena:
+        while True:
+            print("Nasz sklep oferuje: ")
+            for produkt, cena in produkty.items():
+                print(f' - {produkt} - {cena:.2f}')
+            zakup = input("Co chcesz kupić? [k] by zakończyć: ")
+            if zakup.lower() == 'k':
+                print("Zapraszamy ponownie")
+                break
+            if zakup not in produkty:
+                print("Nie ma takiego produkty")
+                continue
+            waga = float(input(f"Ile chcesz kupić - [{zakup}]: "))
+            if waga > magazyn[zakup]:
+                print()
+                print("!! Nie ma tyle w magazynie !!")
+                print(f"W magazynie pozostało: {magazyn[zakup]}")
+                print()
+            else:
+                cena = produkty.get(zakup)
                 koszt = waga * produkty[zakup]
                 print(f"Za [{zakup}] zapłacisz: {koszt:.2f}")
                 magazyn[zakup] -= waga
-            else:
-                print("Brak tego produktu")
+
     elif rola.lower() in ['dostawca', 'd']:
+        # ścieżka dostawcy
+        # dodanie produktu -'d'
+        # zmiana ceny - 'z'
+        # prosimy o podanie produkty w formacie nazwa ilosc cena
         while True:
             do_dodania = input("Podaj produkt w formacie [nazwa ilosc cena]: ")
             if len(do_dodania.split()) == 3:
@@ -61,5 +65,4 @@ while True:
         print("Dziekuję. Produkt Dodany")
     elif rola.lower() == 'q':
         print("Program przestaje działać")
-    break
-
+break
