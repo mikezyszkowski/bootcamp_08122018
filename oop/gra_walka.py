@@ -74,6 +74,7 @@ def fight(attacker, defender):
     print(attacker)
     print(defender)
 
+
 rafal = Char("Rafał", 5, 200)
 janusz = Char("Janusz", 3, 400)
 axe = Item("Axe", 2)
