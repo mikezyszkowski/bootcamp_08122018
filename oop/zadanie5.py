@@ -9,10 +9,8 @@ class CashMachine:
             return True
         return False
 
-
     def put_money(self, bills_list):
         self._money.extend(bills_list)
-
 
     def withdraw_money(self, amount):
         money_to_withdraw = []
@@ -30,17 +28,17 @@ class CashMachine:
         return money_to_withdraw
 
 
-
-
 def test_cash_machine_is_not_available():
     cash_machine = CashMachine()
 
     assert not cash_machine.is_available
 
+
 def test_cash_machine_put_money():
     cash_machine = CashMachine()
     cash_machine.put_money([200, 100, 100, 50])
     assert cash_machine.is_available
+
 
 def test_cash_machine_withdraw_money():
     cash_machine = CashMachine()

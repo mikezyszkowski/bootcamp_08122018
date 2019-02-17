@@ -21,13 +21,16 @@ def test_electric_car_initialization():
     car = ElectricCar(100)
     assert car.max_range == 100
 
+
 def test_electric_car_drive():
     car = ElectricCar(100)
     assert car.drive(50) == 50
 
+
 def test_electric_car_drive_over_max_range_in_one_arpoach():
     car = ElectricCar(100)
     assert car.drive(130) == 100
+
 
 def test_electric_car_charge():
     car = ElectricCar(100)
