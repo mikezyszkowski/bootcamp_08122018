@@ -49,5 +49,5 @@ while True:
         print("Skarb zmienił położenie")
 
     if (position_x, position_y) == (treasure_x, treasure_y):
-        print("GG WP!!!")
+        print("GG")
         break
